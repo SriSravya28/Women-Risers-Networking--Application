@@ -1,0 +1,463 @@
+/* App.css */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #27ae60;
+  --background-light: #f8f9fa;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --max-width: 1200px;
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  padding-top: var(--header-height);
+}
+
+/* ========== HEADER ========== */
+header {
+  background: var(--primary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+nav {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-light);
+}
+
+.brand-icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icon-link {
+  color: var(--text-light);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  padding: 0.5rem;
+}
+
+.icon-link svg {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.icon-link span {
+  font-size: 0.75rem;
+}
+
+/* ========== HOME PAGE ========== */
+.home-page main {
+  padding: 2rem;
+}
+
+.header-section {
+  background: linear-gradient(135deg, var(--primary-color), #34495e);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: calc(var(--header-height) * -1);
+}
+
+.course-grid {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.course-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+/* ========== COURSE DETAIL PAGE ========== */
+.course-detail {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.course-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.course-detail-image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--background-light);
+  padding: 1rem;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.course-info h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.duration-badge {
+  background: var(--background-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ========== SUCCESS PAGE ========== */
+.success-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.success-icon {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  font-size: 2.5rem;
+  color: var(--success-color);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .course-header {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-detail-image {
+    height: 300px;
+  }
+  
+  .nav-right {
+    gap: 1rem;
+  }
+  
+  .icon-link span {
+    display: none;
+  }
+  
+  .success-icon {
+    position: static;
+    margin: 2rem 0;
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-info h1 {
+    font-size: 2rem;
+  }
+  
+  .course-detail {
+    padding: 1rem;
+  }
+}/* App.css */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --success-color: #27ae60;
+  --background-light: #f8f9fa;
+  --text-dark: #2c3e50;
+  --text-light: #ffffff;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+  --max-width: 1200px;
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  padding-top: var(--header-height);
+}
+
+/* ========== HEADER ========== */
+header {
+  background: var(--primary-color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--header-height);
+  z-index: 1000;
+  box-shadow: var(--shadow);
+}
+
+nav {
+  max-width: var(--max-width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-light);
+}
+
+.brand-icon {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icon-link {
+  color: var(--text-light);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: var(--transition);
+  padding: 0.5rem;
+}
+
+.icon-link svg {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.icon-link span {
+  font-size: 0.75rem;
+}
+
+/* ========== HOME PAGE ========== */
+.home-page main {
+  padding: 2rem;
+}
+
+.header-section {
+  background: linear-gradient(135deg, var(--primary-color), #34495e);
+  color: var(--text-light);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: calc(var(--header-height) * -1);
+}
+
+.course-grid {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.course-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--secondary-color);
+}
+
+/* ========== COURSE DETAIL PAGE ========== */
+.course-detail {
+  max-width: var(--max-width);
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.course-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.course-detail-image {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: var(--background-light);
+  padding: 1rem;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.course-info h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.duration-badge {
+  background: var(--background-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ========== SUCCESS PAGE ========== */
+.success-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.success-content {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.success-icon {
+  position: absolute;
+  right: -50px;
+  top: -50px;
+  font-size: 2.5rem;
+  color: var(--success-color);
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .course-header {
+    grid-template-columns: 1fr;
+  }
+  
+  .course-detail-image {
+    height: 300px;
+  }
+  
+  .nav-right {
+    gap: 1rem;
+  }
+  
+  .icon-link span {
+    display: none;
+  }
+  
+  .success-icon {
+    position: static;
+    margin: 2rem 0;
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .course-info h1 {
+    font-size: 2rem;
+  }
+  
+  .course-detail {
+    padding: 1rem;
+  }
+}
