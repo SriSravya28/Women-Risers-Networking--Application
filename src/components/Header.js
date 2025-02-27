@@ -1,8 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHome, FaUser, FaBook, FaCog, FaFemale } from 'react-icons/fa';
 
 const Header = () => {
+    const [userData, setUserData] = useState(null);
+    const [courses, setCourses] = useState([]);
+    const [settings, setSettings] = useState({});
+
+    useEffect(() => {
+        // Mock API call to fetch user data
+        fetch('/api/user')
+            .then(response => response.json())
+            .then(data => setUserData(data));
+
+        // Mock API call to fetch courses
+        fetch('/api/courses')
+            .then(response => response.json())
+            .then(data => setCourses(data));
+
+        // Mock API call to fetch settings
+        fetch('/api/settings')
+            .then(response => response.json())
+            .then(data => setSettings(data));
+    }, []);
+
     return (
         <header>
             <nav>
@@ -17,7 +38,7 @@ const Header = () => {
                     </Link>
                     <Link to="/courses" className="icon-link">
                         <FaBook />
-                        <span>Courses</span>
+                        <span>Courses ({courses.length})</span>
                     </Link>
                     <Link to="/settings" className="icon-link">
                         <FaCog />
@@ -25,7 +46,7 @@ const Header = () => {
                     </Link>
                     <Link to="/profile" className="icon-link">
                         <FaUser />
-                        <span>Profile</span>
+                        <span>{userData ? userData.name : 'Profile'}</span>
                     </Link>
                 </div>
             </nav>
