@@ -79,7 +79,6 @@ nav {
   font-size: 0.75rem;
 }
 
-
 /* Home Page */
 .home-page {
   min-height: 100vh;
@@ -175,8 +174,13 @@ nav {
 /* Course Detail Page */
 .course-detail {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 100px auto 0; /* Adjust margin to account for fixed header */
   padding: 2rem;
+  min-height: calc(100vh - 100px); /* Ensure it doesn't overlap with footer */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .course-header {
@@ -184,6 +188,7 @@ nav {
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .course-image-container img {
@@ -228,6 +233,12 @@ nav {
   content: "✓";
   color: var(--success-color);
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .course-header {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Success Page */
@@ -281,6 +292,14 @@ footer {
   text-align: center;
   padding: 1.5rem;
   margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
