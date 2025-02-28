@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaBook, FaCog, FaFemale } from 'react-icons/fa';
+import { FaHome, FaUser, FaBook, FaCog, } from 'react-icons/fa';
 
 const Header = () => {
     const [userData, setUserData] = useState(null);
@@ -27,10 +27,10 @@ const Header = () => {
     return (
         <header>
             <nav>
-                <div className="nav-left">
-                    <FaFemale className="brand-icon" />
-                    <h1>Women Risers</h1>
-                </div>
+            <div className="nav-left" style={{ position: 'relative' }}>
+      <img src={require('../Assets/icon.png')} alt="Women Risers Icon" className="women-risers-icon" />
+      <h1>Women Risers</h1>
+    </div>
                 <div className="nav-right">
                     <Link to="/" className="icon-link">
                         <FaHome />

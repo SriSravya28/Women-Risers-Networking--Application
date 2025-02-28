@@ -43,10 +43,15 @@ nav {
 }
 
 .nav-left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: var(--text-light);
+  position: relative; /* Ensure the icon is positioned relative to this container */
+}
+
+.women-risers-icon {
+  width: 34px; /* Set the desired width */
+  height: 34px; /* Set the desired height */
+  position: absolute; /* Position it absolutely within the nav-left container */
+  top: 20px; /* Adjust the top position */
+  left: 20px; /* Adjust the left position */
 }
 
 .brand-icon {
