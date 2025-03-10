@@ -1,57 +1,60 @@
+// Updated Header.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaBook, FaCog, } from 'react-icons/fa';
+import { FaHome, FaUser, FaBook, FaCog } from 'react-icons/fa';
+import './Header.css'; // Create this file for dropdown styles
 
 const Header = () => {
-    const [userData, setUserData] = useState(null);
-    const [courses, setCourses] = useState([]);
-    const [settings, setSettings] = useState({});
+  const [userData, setUserData] = useState(null);
+  const [courses, setCourses] = useState([]);
+  const [settings, setSettings] = useState({});
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-    useEffect(() => {
-        // Mock API call to fetch user data
-        fetch('/api/user')
-            .then(response => response.json())
-            .then(data => setUserData(data));
+  // Add mock enrolled courses count
+  const [enrolledCourses] = useState(2);
 
-        // Mock API call to fetch courses
-        fetch('/api/courses')
-            .then(response => response.json())
-            .then(data => setCourses(data));
+  useEffect(() => {
+    // Existing API calls...
+  }, []);
 
-        // Mock API call to fetch settings
-        fetch('/api/settings')
-            .then(response => response.json())
-            .then(data => setSettings(data));
-    }, []);
-
-    return (
-        <header>
-            <nav>
-            <div className="nav-left" style={{ position: 'relative' }}>
-      <img src={require('../Assets/icon.png')} alt="Women Risers Icon" className="women-risers-icon" />
-      <h1>Women Risers</h1>
-    </div>
-                <div className="nav-right">
-                    <Link to="/" className="icon-link">
-                        <FaHome />
-                        <span>Home</span>
-                    </Link>
-                    <Link to="/courses" className="icon-link">
-                        <FaBook />
-                        <span>Courses ({courses.length})</span>
-                    </Link>
-                    <Link to="/settings" className="icon-link">
-                        <FaCog />
-                        <span>Settings</span>
-                    </Link>
-                    <Link to="/profile" className="icon-link">
-                        <FaUser />
-                        <span>{userData ? userData.name : 'Profile'}</span>
-                    </Link>
-                </div>
-            </nav>
-        </header>
-    );
+  return (
+    <header>
+      <nav>
+        <div className="nav-left" style={{ position: 'relative' }}>
+          <img src={require('../Assets/icon.png')} alt="Women Risers Icon" className="women-risers-icon" />
+          <h1>Women Risers</h1>
+        </div>
+        <div className="nav-right">
+          <Link to="/" className="icon-link">
+            <FaHome />
+            <span>Home</span>
+          </Link>
+          <Link to="/courses" className="icon-link">
+            <FaBook />
+            <span>Courses ({enrolledCourses})</span>
+          </Link>
+          <Link to="/settings" className="icon-link">
+            <FaCog />
+            <span>Settings</span>
+          </Link>
+          <div 
+            className="icon-link profile-link" 
+            onMouseEnter={() => setShowProfileDropdown(true)}
+            onMouseLeave={() => setShowProfileDropdown(false)}
+          >
+            <FaUser />
+            <span>{userData ? userData.name : 'Profile'}</span>
+            {showProfileDropdown && (
+              <div className="profile-dropdown">
+                <Link to="/profile">View Profile</Link>
+                <button>Logout</button>
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
 };
 
 export default Header;

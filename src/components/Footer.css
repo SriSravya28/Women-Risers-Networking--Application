@@ -1,0 +1,30 @@
+/* Footer.css */
+footer {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    margin-top: auto; /* Pushes footer to bottom */
+    width: 100%;
+  }
+  
+  footer p {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+  }
+  
+  /* Add to existing LayoutFix.css */
+  .home-page,
+  .course-detail,
+  .settings-page,
+  .profile-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Maintain full viewport height */
+  }
+  
+  main {
+    flex: 1; /* Allows main content to grow */
+    padding: 20px 0;
+  }

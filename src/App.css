@@ -1,328 +1,212 @@
-:root {
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-  --success-color: #27ae60;
-  --background-light: #f8f9fa;
-  --text-dark: #2c3e50;
-  --text-light: #ffffff;
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
+/* src/App.css */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: var(--text-dark);
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
 }
 
 /* Header Styles */
 header {
-  background: var(--primary-color);
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
   position: fixed;
-  top: 0;
   width: 100%;
-  height: var(--header-height);
+  top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow);
-}
-
-nav {
-  max-width: var(--max-width);
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .nav-left {
-  position: relative; /* Ensure the icon is positioned relative to this container */
-}
-
-.women-risers-icon {
-  width: 34px; /* Set the desired width */
-  height: 34px; /* Set the desired height */
-  position: absolute; /* Position it absolutely within the nav-left container */
-  top: 20px; /* Adjust the top position */
-  left: 20px; /* Adjust the left position */
-}
-
-.brand-icon {
-  font-size: 2rem;
-  color: var(--secondary-color);
-}
-
-.nav-right {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.icon-link {
-  color: var(--text-light);
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: var(--transition);
-  padding: 0.5rem;
-}
-
-.icon-link svg {
-  font-size: 1.5rem;
-  margin-bottom: 0.25rem;
-}
-
-.icon-link span {
-  font-size: 0.75rem;
-}
-
-/* Home Page */
-.home-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.header-section {
-  background: linear-gradient(135deg, var(--primary-color), #34495e);
-  color: var(--text-light);
-  padding: 4rem 2rem 2rem;
-  text-align: center;
-}
-
-.header-section h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.progress-container {
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.progress-bar {
-  background: rgba(255, 255, 255, 0.2);
-  height: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.progress-fill {
-  background: var(--success-color);
-  height: 100%;
-  transition: width 0.5s ease;
-}
-
-.course-grid {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.course-card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--shadow);
-  transition: var(--transition);
-}
-
-.course-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.course-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-bottom: 3px solid var(--secondary-color);
-}
-
-.course-content {
-  padding: 1.5rem;
-}
-
-.instructor {
-  color: #7f8c8d;
-  font-size: 0.9rem;
-  margin: 0.5rem 0;
-}
-
-.enroll-btn {
-  display: inline-block;
-  background: var(--secondary-color);
-  color: white;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: var(--transition);
-  margin-top: 1rem;
-}
-
-.enroll-btn:hover {
-  background: #2980b9;
-  transform: translateY(-2px);
-}
-
-/* Course Detail Page */
-.course-detail {
-  max-width: 1200px;
-  margin: 100px auto 0; /* Adjust margin to account for fixed header */
-  padding: 2rem;
-  min-height: calc(100vh - 100px); /* Ensure it doesn't overlap with footer */
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.course-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-  width: 100%;
-}
-
-.course-image-container img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-}
-
-.course-info h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
-}
-
-.duration {
-  background: var(--background-light);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  display: inline-block;
-  margin: 1rem 0;
-}
-
-.action-buttons {
-  margin: 2rem 0;
-}
-
-.course-content ul {
-  display: grid;
-  gap: 1rem;
-}
-
-.course-content li {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: var(--shadow);
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.course-content li::before {
-  content: "✓";
-  color: var(--success-color);
-  font-weight: bold;
+/* HomePage.css */
+.home-container {
+  --hero-text-color: #fff;
+  --cta-bg-color: #007bff;
+  --cta-hover-color: #0056b3;
+  --section-bg-color: #f8f9fa;
 }
 
-@media (max-width: 768px) {
-  .course-header {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Success Page */
-.success-page {
-  min-height: 100vh;
+.home-hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Removed the image URL */
   display: flex;
-  flex-direction: column;
-}
-
-.success-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: var(--hero-text-color);
+  padding: 0 20px;
+  margin-top: -70px; /* Offset header height */
+  padding-top: 70px; /* Match header height */
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.cta-button {
+  background: var(--cta-bg-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: var(--cta-hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.features-section {
+  padding: 5rem 0;
+  background: var(--section-bg-color);
+}
+
+/* SuccessfulPage.css */
+.success-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
+  background: #f8f9fa;
+  margin-top: -70px;
+  padding-top: 70px;
+}
+
+.success-card {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  animation: scaleUp 0.5s ease;
 }
 
 .success-icon {
-  font-size: 5rem;
-  color: var(--success-color);
+  font-size: 4rem;
+  color: #28a745;
+  margin-bottom: 1.5rem;
+}
+
+.success-card h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.success-card p {
+  font-size: 1.1rem;
+  color: #666;
   margin-bottom: 2rem;
-  animation: bounce 1s infinite;
+  line-height: 1.6;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.home-btn {
-  background: var(--primary-color);
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Footer Styles */
+footer {
+  background: white;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Common Components */
+.enroll-btn, .home-btn {
+  background: #6366f1;
   color: white;
   padding: 1rem 2rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: var(--transition);
-  margin-top: 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
 
-.home-btn:hover {
-  background: #34495e;
-  transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-  background: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-  font-size: 1rem;
+.enroll-btn:hover, .home-btn:hover {
+  background: #4f46e5;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .course-header {
-    grid-template-columns: 1fr;
+  .hero-content h1 {
+    font-size: 2.5rem;
   }
-  
-  nav {
-    flex-direction: column;
-    gap: 1rem;
+
+  .hero-content p {
+    font-size: 1.1rem;
   }
-  
-  .header-section h1 {
+
+  .success-card {
+    padding: 2rem;
+  }
+
+  .success-card h1 {
     font-size: 2rem;
   }
-  
-  .course-grid {
-    grid-template-columns: 1fr;
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .success-card {
+    padding: 1.5rem;
+  }
+
+  .success-icon {
+    font-size: 3rem;
   }
 }

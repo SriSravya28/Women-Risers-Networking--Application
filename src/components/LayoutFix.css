@@ -1,0 +1,86 @@
+/* src/components/LayoutFix.css */
+
+/* Global layout structure preservation */
+.home-page,
+.course-detail,
+.settings-page,
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header/nav preservation */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-right {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+/* Course grid preservation */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Profile page alignment fix */
+.profile-content {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  padding: 30px;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Settings page alignment */
+.settings-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.settings-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Z-index fixes */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Responsive preservation */
+@media (max-width: 768px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+}

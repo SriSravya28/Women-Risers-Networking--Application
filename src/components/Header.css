@@ -1,0 +1,148 @@
+/* Header.css */
+:root {
+    --header-height: 70px;
+    --nav-padding: 5%;
+  }
+  
+  header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px var(--nav-padding);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Add this to your global styles or layout component */
+  body {
+    padding-top: var(--header-height);
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+  }
+  
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+  }
+  
+  .women-risers-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .nav-left h1 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin: 0;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+  }
+  
+  .icon-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    position: relative;
+  }
+  
+  .icon-link:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+  }
+  
+  .icon-link svg {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+  
+  /* Profile dropdown */
+  .profile-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 180px;
+    z-index: 1001;
+    display: none;
+  }
+  
+  .profile-link:hover .profile-dropdown {
+    display: block;
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    :root {
+      --nav-padding: 20px;
+    }
+  
+    .nav-left h1 {
+      font-size: 1.2rem;
+    }
+  
+    .nav-right {
+      gap: 20px;
+    }
+  
+    .icon-link span {
+      display: none;
+    }
+  
+    .icon-link svg {
+      margin-bottom: 0;
+      font-size: 1.6rem;
+    }
+  
+    .women-risers-icon {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header {
+      padding: 12px 15px;
+    }
+  
+    .nav-right {
+      gap: 15px;
+    }
+  
+    .icon-link svg {
+      font-size: 1.4rem;
+    }
+  }
